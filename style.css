@@ -1,0 +1,282 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Karla', sans-serif;
+    color: #012A4A;
+}
+
+.main {
+    background-color: #a9d6e5;
+    position: absolute;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    z-index: -3;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#mainText{
+    text-align: center;
+}
+
+.aboutMe {
+    background-color: #89c2d9;
+    position: absolute;
+    top: 0px;
+    display: flex;
+    z-index: -4;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.aboutMeBox {
+    display:flex;
+    flex-direction: column;
+    justify-content: center   ;
+    width: 400px;
+    height: 400px;
+    padding: 10px;
+    border-right: 1px solid #013a631f;
+
+}
+
+.aboutMeBox:last-child {
+    border-right: none;
+}
+
+.aboutMeHeader {
+    text-align: center;
+    transition: all 1s linear;
+}
+
+
+.aboutMeList {
+    padding: 20px;
+}
+
+.projects {
+    background-color: #61A5C2;
+    position: absolute;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    z-index: -5;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.row{
+    display:flex;
+    flex-direction:row;
+    justify-content: center;
+}
+
+.projects-container{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+    width:30%;
+    padding: 15px;
+
+}
+
+.projects-title{
+    border-bottom: #013a631f solid 1px;
+    margin:15px;
+}
+
+.projects-heading{
+    text-align: center;
+}
+
+.projects-heading>h3{
+    display:inline;
+    vertical-align: 50%;
+}
+
+.projects-text{
+    padding:30px;
+    vertical-align: top;
+}
+
+.projects-img{
+    height: 128px;
+    width: 128px;
+    border-radius: 10px;
+}
+
+.additionalInfo {
+    background-color: #468FAF;
+    position: absolute;
+    top: 0px;
+    display: flex;
+    flex-direction: column;
+    z-index: -6;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.additionalInfoBox {
+    width: 70%;
+}
+
+.additionalInfoText {
+    text-align: center;
+}
+
+.arrowDown {
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    bottom: -2.5px;
+    left: 50%;
+    height: 30px;
+    width: 30px;
+    transform: translate(-50%,-50%);
+    animation: 1s linear infinite alternate oscillateDown;
+}
+
+.arrowUp {
+    display:flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    top: 7.5px;
+    left: 50%;
+    height: 25px;
+    width: 25px;
+    transform: translate(-50%,0);
+    animation: 1s linear infinite alternate oscillateUp;
+}
+
+.arrow:hover {
+    opacity: 30%;
+    background-color: white;
+    border-radius: 50%;
+    animation:none;
+}
+
+.moveUp {
+    transform: translate(0, -130%);
+    transition: transform 1s ease-in;
+}
+
+.moveDown {
+    transform: translate(0, 0);
+    transition: transform 1s ease-in;
+}
+
+#imgMe {
+    border-radius: 50%;
+}
+
+.fade-in {
+    animation: fadeIn ease 1s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes oscillateDown {
+    0% {
+        bottom:-5px;
+    }
+
+    100% {
+        bottom:0px;
+    }
+}
+
+@keyframes oscillateUp{
+    0% {
+        top:5px;
+    }
+
+    100% {
+        top:10px;
+    }
+}
+
+[hidden]{
+    display:none;
+}
+
+
+@media (max-width:425px) {
+    .aboutMe{
+        flex-direction: column;
+    }
+
+    .aboutMeBox{
+        height: auto;
+        border-left: none;
+    
+    }
+    
+    .aboutMeHeader{
+        display: flex;
+        justify-content: center;
+    }
+
+    .aboutMeText p {
+        margin:10px;
+    }
+
+    .aboutMeText ul {
+        margin:10px;
+        padding:0px;
+    }
+
+    .projects-container{
+        width:auto;
+        padding: 5px;
+    
+    }
+    .projects-img{
+        display:none;
+    }
+    .projects-text{
+        padding:10px;
+    }
+
+
+
+}
+
+@media (max-height:800px){
+    .projects-img{
+        display: none;
+    }
+    .projects-heading svg{
+        display:none;
+    }
+    .projects-container{
+        height:max-content;
+        width:fit-content;
+        padding: 5px;
+        margin: 15px;
+        border:#012A4A 2px solid;
+        border-radius:10px;
+    }
+}
